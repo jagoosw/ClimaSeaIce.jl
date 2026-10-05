@@ -6,7 +6,7 @@ export SeaIceMomentumEquation, ExplicitSolver, SplitExplicitSolver, SemiImplicit
        LandfastBasalStress
 
 using Adapt: Adapt
-using KernelAbstractions: @kernel, @index, @atomic
+using KernelAbstractions: @kernel, @index
 using Oceananigans: Oceananigans, prognostic_state, prognostic_fields,
                     restore_prognostic_state!, fields
 using Oceananigans.Architectures: architecture
@@ -23,9 +23,7 @@ using ..Rheologies: ∂ⱼ_σ₁ⱼ, ∂ⱼ_σ₂ⱼ,
                     Auxiliaries,compute_stresses!,
                     initialize_rheology!, finalize_rheology!,
                     compute_substep_Δtᶠᶜᶜ, compute_substep_Δtᶜᶠᶜ,
-                    sum_of_forcing_u, sum_of_forcing_v,
-                    stress_kernel_ranges, mapped_stress_kernels, configure_mapped_kernel,
-                    unsettled_stresses
+                    sum_of_forcing_u, sum_of_forcing_v
 
 ## A Framework to solve for the ice momentum equation, in the form:
 ##

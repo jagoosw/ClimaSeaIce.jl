@@ -42,7 +42,6 @@ end
 if TEST_GROUP == "all" || TEST_GROUP == "timestepping"
     include("test_time_stepping.jl")
     include("test_free_surface_term.jl")
-    include("test_skip_ice_free_cells.jl")
 end
 
 if TEST_GROUP == "all" || TEST_GROUP == "vertical_grid"
